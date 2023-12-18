@@ -1,0 +1,24 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .course-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .course-box {
+    flex: 0 0 40%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
