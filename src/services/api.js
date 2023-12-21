@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://cute-flannel-nightgown-deer.cyclic.app/api/v1/users/course";
+const API_URL = "https://cute-flannel-nightgown-deer.cyclic.app/api/v1/course";
 // https://jsonplaceholder.typicode.com/users
 
 const fetchCourses = async () => {
