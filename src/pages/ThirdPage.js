@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import CourseList from "../component/CourseList";
 import { fetchCourses } from "../services/api";
 import './courses.css'
+import { Link } from 'react-router-dom'
+
 
 function ThirdPage() {
     const [courses, setCourses] = useState([]);
@@ -28,10 +30,9 @@ function ThirdPage() {
                     <div className="logo">FreeCodeCamp</div>
                 </div>
                 <div className="right">
-                    <button className="sign-in">Menu</button>
-                    {/* <Link to="/auth">
-                        <button className="sign-in" style={{ marginLeft: '10px' }}>Sign In</button>
-                    </Link> */}
+                    <Link to="/logout">
+                        <button className="sign-in">Logout</button>
+                    </Link>
                 </div>
             </div>
             <div className="app">

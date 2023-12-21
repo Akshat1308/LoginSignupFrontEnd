@@ -1,12 +1,14 @@
 import axios from "axios";
 
-const API_URL = "https://jsonplaceholder.typicode.com/users";
+const API_URL = "https://cute-flannel-nightgown-deer.cyclic.app/api/v1/users/course";
 // https://jsonplaceholder.typicode.com/users
 
 const fetchCourses = async () => {
   try {
     const response = await axios.get(API_URL);
-    return response.data;
+    console.log(response)
+    return response.data.dataRecieved;
+
   } catch (error) {
     console.error("Error fetching courses:", error);
     return [];

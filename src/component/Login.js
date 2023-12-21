@@ -11,14 +11,18 @@ import React from 'react'
 function Login() {
 
 
+    const [show, setShow] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const toast = useToast();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const handleClick = () => setShow(!show);
 
-    // const history = useNavigate();
+    const history = useNavigate();
 
     const submitHandler = async () => {
+        setLoading(true);
         if (!email || !password) {
             toast({
                 title: "Please Fill all the Feilds",
@@ -27,6 +31,7 @@ function Login() {
                 isClosable: true,
                 position: "bottom",
             });
+            setLoading(false);
             return;
         }
 
@@ -38,13 +43,16 @@ function Login() {
                 },
             };
 
-            const { data } = await axios.post(
-                "https://anxious-frock-fish.cyclic.app/api/user/login",
+            console.log(email, password)
+
+            const data = await axios.post(
+                "https://cute-flannel-nightgown-deer.cyclic.app/api/v1/login",
                 { email, password },
                 config
             );
 
-            // console.log(JSON.stringify(data));
+            console.log(JSON.stringify(data));
+
             toast({
                 title: "Login Successful",
                 status: "success",
@@ -52,9 +60,12 @@ function Login() {
                 isClosable: true,
                 position: "bottom",
             });
+
+
             localStorage.setItem("userInfo", JSON.stringify(data));
             setLoading(false);
-            history.push("/profile");
+            history("/profile");
+            
         } catch (error) {
             toast({
                 title: "Error Occured!",
@@ -65,6 +76,7 @@ function Login() {
                 position: "bottom",
             });
             setLoading(false);
+            
         }
     };
 

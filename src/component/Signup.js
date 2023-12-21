@@ -21,8 +21,6 @@ function Signup() {
     const [email, setEmail] = useState();
     const [confirmpassword, setConfirmpassword] = useState();
     const [password, setPassword] = useState();
-    const [pic, setPic] = useState();
-    const [picLoading, setPicLoading] = useState(false);
 
     ///////////////////////
 
@@ -79,7 +77,7 @@ function Signup() {
                 },
             };
             const { data } = await axios.post(
-                "https://anxious-frock-fish.cyclic.app/api/user",
+                "https://cute-flannel-nightgown-deer.cyclic.app/api/v1/register",
                 {
                     name,
                     email,
@@ -96,8 +94,7 @@ function Signup() {
                 position: "bottom",
             });
             localStorage.setItem("userInfo", JSON.stringify(data));
-            setPicLoading(false);
-            history.push("/profile");
+            history("/profile");
         } catch (error) {
             toast({
                 title: "Error Occured!",
@@ -165,7 +162,6 @@ function Signup() {
                 width="100%"
                 style={{ marginTop: 15 }}
                 onClick={submitHandler}
-                isLoading={picLoading}
             >
                 Sign Up
             </Button>
