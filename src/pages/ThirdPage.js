@@ -36,10 +36,10 @@ function ThirdPage() {
                 </div>
             </div>
             <div className="app">
-                <h1>Welcome to freeCodeCamp.org</h1>
-                <blockquote>
-                    <p>"I have not failed. I've just found 10,000 ways that won't work."</p>
-                    <footer>- Thomas A. Edison</footer>
+                <p style={{fontSize:'24px' , fontWeight:'bold' , textAlign:'center'}}>Welcome to freeCodeCamp.org</p> <br></br>
+                <blockquote style={{textAlign:'center'}}>
+                    <p  >"I have not failed. I've just found 10,000 ways that won't work."</p>
+                    <footer>- Thomas A. Edison</footer> <br />
                 </blockquote>
                 <CourseList courses={courses} />
             </div>
